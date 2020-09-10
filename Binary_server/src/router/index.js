@@ -6,7 +6,7 @@ const reserve = require('./reserve');
 const bhospital = require('./bhospital');
 const breserve = require('./breserve');
 const main = require('./main');
-const upload = require('./upload');
+// const upload = require('./upload');
 
 router.use('/auth', auth);
 router.use('/dog', dog);
@@ -15,6 +15,6 @@ router.use('/reserve', reserve);
 router.use('/bhospital', bhospital);
 router.use('/breserve', breserve);
 router.use('/main', main);
-router.use('/upload', upload);
+// router.use('/upload', upload);
 
 module.exports = router;
