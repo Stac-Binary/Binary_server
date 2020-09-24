@@ -6,7 +6,7 @@ exports.PostBreserve = async (req, res) => {
     try {
         const data = await models.Breserve.findOne ({
             where: {
-                userId: body.userId,
+                dogIdx: body.dogIdx,
                 bhospitalIdx: body.bhospitalIdx,
                 bloodType: body.bloodType,
                 time: body.time,
@@ -21,7 +21,7 @@ exports.PostBreserve = async (req, res) => {
         }
 
         await models.Breserve.create ({
-            userId: body.userId,
+            dogIdx: body.dogIdx,
             bhospitalIdx: body.bhospitalIdx,
             bloodType: body.bloodType,
             time: body.time,
@@ -42,8 +42,25 @@ exports.PostBreserve = async (req, res) => {
 
 exports.GetBreserve = async (req, res) => {
     try {
-        let hospitals = [];
-        hospitals = await models.Breserve.findAll ({});
+        let breserves = [];
+        if (req.query.dogIdx) {
+            breserves = await models.Breserve.findAll ({
+                where: {
+                    dogIdx: req.query.dogIdx,
+                },
+            });
+        } else {
+            breserves = await models.Breserve.findAll ({});
+        }
+
+        return res.status(200).json({
+            message: "헌혈 예약 조회 성공!",
+            date: {
+                breserves,
+            }
+        });
+        
+
     } catch (err) {
         console.log(err);
         return res.status(500).json({
