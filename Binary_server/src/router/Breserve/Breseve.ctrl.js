@@ -6,6 +6,7 @@ exports.PostBreserve = async (req, res) => {
     try {
         const data = await models.Breserve.findOne ({
             where: {
+                userId: body.userId,
                 dogIdx: body.dogIdx,
                 bhospitalIdx: body.bhospitalIdx,
                 bloodType: body.bloodType,
@@ -21,6 +22,7 @@ exports.PostBreserve = async (req, res) => {
         }
 
         await models.Breserve.create ({
+            userId: body.userId,
             dogIdx: body.dogIdx,
             bhospitalIdx: body.bhospitalIdx,
             bloodType: body.bloodType,
