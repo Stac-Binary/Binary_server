@@ -15,6 +15,7 @@ const UserFun = require('./User');
 const HospitalFun = require('./Hospital');
 const ReserveFun = require('./Reserve');
 const BreserveFun = require('./Breserve');
+const BhospitalFun = require('./Bhospital');
 
 module.exports = {
     User: UserFun(sequelize, Sequelize),
@@ -22,6 +23,7 @@ module.exports = {
     Hospital: HospitalFun(sequelize, Sequelize),
     Reserve: ReserveFun(sequelize, Sequelize),
     Breserve: BreserveFun(sequelize, Sequelize),
+    Bhospital: BhospitalFun(sequelize, Sequelize),
 }
 
 sequelize.sync().then(() => {

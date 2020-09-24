@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Breserve = sequelize.define('breserve', {
+  const Hospital = sequelize.define('hospital', {
     idx: {
       field: 'idx',
       type: DataTypes.INTEGER,
@@ -7,35 +7,35 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
-    userId: {
-      field: 'user_id',
+    hospitalName: {
+      field: 'hospital_name',
       type: DataTypes.STRING,
       allowNull: false,
     },
-    hospitalIdx: {
-      field: 'hospital_idx',
+    adress: {
+      field: 'adress',
+      type: DataTypes.STRING,
+      allowNull: false,
+   }, 
+   adress: {
+      field: 'adress',
+      type: DataTypes.STRING,
+      allowNull: false,
+   }, 
+   call: {
+      field: 'call',
       type: DataTypes.INTEGER,
       allowNull: false,
-    },
-    bloodType: {
+   }, 
+   bloodType: {
       field: 'blood_type',
-      type: DataTypes.STRING,
+      type: DataTypes.FLOAT,
       allowNull: false,
-    }, 
-    time: {
-      field: 'time',
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    date: {
-      field: 'date',
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+   }, 
   }, {
-    tableName: 'breserve',
+    tableName: 'hospital',
     timestamps: false,
   });
 
-  return Breserve;
+  return Hospital;
 }

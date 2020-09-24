@@ -25,6 +25,6 @@ exports.postDog = async (req, res) => {
         console.log(err)
         return res.status(500).json({
             message: "서버 오류",
-        })
+        });
     }
 }

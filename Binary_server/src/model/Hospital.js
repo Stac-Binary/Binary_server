@@ -16,22 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       field: 'adress',
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    call: {
-      field: 'call',
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    needBleed: {
-      field: 'need_bleed',
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    bleedType: {
-      field: 'bleed_type',
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+   }, 
   }, {
     tableName: 'hospital',
     timestamps: false,
