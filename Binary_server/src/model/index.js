@@ -13,11 +13,15 @@ const sequelize = new Sequelize('binary', 'root', '1234', {
 const DogFun = require('./Dog');
 const UserFun = require('./User');
 const HospitalFun = require('./Hospital');
+const ReserveFun = require('./Reserve');
+const BreserveFun = require('./Breserve');
 
 module.exports = {
     User: UserFun(sequelize, Sequelize),
     Dog: DogFun(sequelize, Sequelize),
     Hospital: HospitalFun(sequelize, Sequelize),
+    Reserve: ReserveFun(sequelize, Sequelize),
+    Breserve: BreserveFun(sequelize, Sequelize),
 }
 
 sequelize.sync().then(() => {

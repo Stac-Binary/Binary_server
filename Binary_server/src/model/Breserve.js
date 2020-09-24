@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Reserve = sequelize.define('reserve', {
+  const Breserve = sequelize.define('breserve', {
     idx: {
       field: 'idx',
       type: DataTypes.INTEGER,
@@ -17,20 +17,20 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    service: {
-      field: 'service',
+    wantTime: {
+      field: 'want_time',
       type: DataTypes.STRING,
       allowNull: false,
     },
-    day: {
-      field: 'day',
+    wantDay: {
+      field: 'want_day',
       type: DataTypes.STRING,
       allowNull: false,
     },
   }, {
-    tableName: 'reserve',
+    tableName: 'breserve',
     timestamps: false,
   });
 
-  return Reserve;
+  return Breserve;
 }
