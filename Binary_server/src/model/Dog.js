@@ -32,6 +32,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    dogProfile: {
+      field: "dog_profile",
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   }, {
     tableName: 'dog',
     timestamps: false,

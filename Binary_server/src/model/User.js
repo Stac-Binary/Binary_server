@@ -25,7 +25,12 @@ module.exports = (sequelize, DataTypes) => {
       field: 'email',
       type: DataTypes.STRING,
       allowNull: false,
-    }
+    },
+    profile: {
+      field: 'profile',
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   }, {
     tableName: 'user',
     timestamps: false,
