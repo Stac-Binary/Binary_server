@@ -28,3 +28,25 @@ exports.postDog = async (req, res) => {
         });
     }
 }
+
+exports.modifyDog = async (req, res) => {
+    const { body } = req;
+    const { idx } = req.params;
+
+    try {
+        await models.Dog.update(body, {
+            where: {
+                idx,
+            }
+        });
+
+        return res.status(200).json ({
+            message: "강아지 정보 수정 성공!",
+        });
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json ({
+            message: "서버 오류",
+        });
+    }
+}
