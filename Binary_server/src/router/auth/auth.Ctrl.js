@@ -80,3 +80,39 @@ exports.register =  async (req, res) => {
         });
     }
 }
+
+exports.modifyAuth = async (req, res) => {
+    const { body } = req;
+    const { id } = req.params;
+
+    try {
+
+        const user = await models.User.findOne({
+            where: {
+                id: id,
+            },
+        });
+
+        if(!user) {
+            return res.status(401).json({
+                message: "아이디를 확인해주세요!",
+            });
+        }
+
+        await models.User.update(body, {
+            where: {
+                id,
+            }
+        });
+
+        return res.status(200).json ({
+            message: "계정정보 수정 성공!",
+        });
+        
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({
+            message: "서버 오류",
+        });
+    }
+}
