@@ -5,4 +5,5 @@ router.post('/', reserveCtrl.Postreserve);
 router.get('/', reserveCtrl.Getreserve);
 
 router.get('/:idx', reserveCtrl.Getreserves);
+
 module.exports = router;
