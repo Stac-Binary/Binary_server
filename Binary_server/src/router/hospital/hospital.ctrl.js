@@ -8,15 +8,23 @@ exports.GetHospital = async (req, res) => {
         if (req.query.keyword) {
             hospitals = await models.Hospital.findAll ({
                 where: {
-                    hospitalName: {
-                        [Op.like]: "%" + req.query.keyword + "%"
-                    }
+                    [Op.or]: [
+                        {
+                            hospitalName: {
+                                [Op.like]: "%" + req.query.keyword + "%"
+                            }
+                        },
+                        {
+                            address: {
+                                [Op.like]: "%" + req.query.keyword + "%"
+                            }
+                        }
+                    ]
                 },
                 raw: true,
             });
         } else {
-            hospitals = await models.Hospital.findAll ({
-            });
+            hospitals = await models.Hospital.findAll ({});
         }
 
         return res.status(200).json({

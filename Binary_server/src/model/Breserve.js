@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    hospitalIdx: {
-      field: 'hospital_idx',
+    bhospitalIdx: {
+      field: 'bhospital_idx',
       type: DataTypes.INTEGER,
       allowNull: false,
     },

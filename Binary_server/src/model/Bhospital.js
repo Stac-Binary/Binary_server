@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Hospital = sequelize.define('hospital', {
+  const Bhospital = sequelize.define('bhospital', {
     idx: {
       field: 'idx',
       type: DataTypes.INTEGER,
@@ -12,13 +12,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    adress: {
-      field: 'adress',
-      type: DataTypes.STRING,
-      allowNull: false,
-   }, 
-   adress: {
-      field: 'adress',
+    address: {
+      field: 'address',
       type: DataTypes.STRING,
       allowNull: false,
    }, 
@@ -29,13 +24,13 @@ module.exports = (sequelize, DataTypes) => {
    }, 
    bloodType: {
       field: 'blood_type',
-      type: DataTypes.FLOAT,
+      type: DataTypes.STRING,
       allowNull: false,
    }, 
   }, {
-    tableName: 'hospital',
+    tableName: 'bhospital',
     timestamps: false,
   });
 
-  return Hospital;
+  return Bhospital;
 }
