@@ -36,3 +36,39 @@ exports.Postreserve = async (req, res) => {
         });
     }
 }
+
+exports.Getreserve = async (req, res) => {
+    try {
+        let hostpials = [];
+        hostpials = await models.Reserve.findAll ({});
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({
+            message: "서버 오류",
+        });
+    }
+}
+
+exports.Getreserves = async (req, res) => {
+    try {
+        const reserve = await models.Reserve.findOne ({
+            where: {
+                idx: req.params.idx,
+            },
+            raw: true,
+        });
+
+        return res.status(200).json({
+            message: "조회 성공!",
+            data: {
+                reserve,
+            },
+        });
+
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({
+            message: "서버 오류",
+        });
+    }
+}
