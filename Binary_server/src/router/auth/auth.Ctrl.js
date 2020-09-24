@@ -66,6 +66,7 @@ exports.register =  async (req, res) => {
             pw: body.pw,
             name: body.name,
             address: body.address,
+            email: body.email,
         })
 
         console.log("회원가입 성공!");
