@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const BhospitalCtrl = require('./Bshospital.ctrl');
+const BhospitalCtrl = require('./Bhospital.ctrl');
 
 router.get('/', BhospitalCtrl.GetBhospital);
 
