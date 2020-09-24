@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const Breserve = require('../../model/Breserve');
 const BreserveCtrl = require('./Breseve.ctrl');
 
 router.post('/', BreserveCtrl.PostBreserve);
