@@ -29,6 +29,28 @@ exports.postDog = async (req, res) => {
     }
 }
 
+exports.getDog = async (req, res) => {
+    try {
+        const doglist = await models.Dog.findAll ({
+            where: {
+                userId: req.query.userId,
+            }
+        });
+
+        return res.status(200).json ({
+            message: "강아지 리스트 불러오기 성공",
+            data: {
+                doglist,
+            }
+        });
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json ({
+            message: "서버 오류",
+        });
+    }
+}
+
 exports.modifyDog = async (req, res) => {
     const { body } = req;
     const { idx } = req.params;
