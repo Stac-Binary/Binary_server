@@ -12,7 +12,8 @@ const router = require('./router');
 
 app.use('/static', express.static('public'));
 app.use('/api', router);
+// app.use('/jungbin/need/MacbookPro')
 
-app.listen(8080, () => {
+app.listen(8000, () => {
     console.log("server start!");
 });

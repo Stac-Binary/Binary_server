@@ -29,6 +29,7 @@ exports.login = async (req, res) => {
             });
         }
 
+        console.log("로그인 성공!");
         return res.status(200).json({
             message: "로그인 성공!",
             data: {
